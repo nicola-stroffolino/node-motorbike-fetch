@@ -1,0 +1,92 @@
+┌───────────────────────────────────────────────────────┐
+│                 Informazioni Generali                 │
+├───────────────────┬───────────────────────────────────┤
+│       Marca       │            'Kawasaki'             │
+│      Modello      │              'Z 650'              │
+│   Allestimento    │        'Z 650 (2021 - 22)'        │
+│     Categoria     │              'Naked'              │
+│ Inizio produzione │              '2020'               │
+│  Fine produzione  │              'n.d.'               │
+│     Prezzo da     │ '7.540 € - franco concessionario' │
+│     Garanzia      │              'n.d.'               │
+│     Optional      │              'n.d.'               │
+└───────────────────┴───────────────────────────────────┘
+
+┌─────────────────────────────────────────┐
+│                  Misure                 │
+├────────────────────────────┬────────────┤
+│         Lunghezza          │ '2.055 mm' │
+│         Larghezza          │  '765 mm'  │
+│          Altezza           │ '1.065 mm' │
+│  Altezza minima da terra   │  '130 mm'  │
+│ Altezza sella da terra MIN │  '790 mm'  │
+│ Altezza sella da terra MAX │   'n.d.'   │
+│         Interasse          │ '1.410 mm' │
+│        Peso a secco        │   'n.d.'   │
+│  Peso in ordine di marcia  │  '187 Kg'  │
+└────────────────────────────┴────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│                            Motore                           │
+├───────────────────────────────┬─────────────────────────────┤
+│          Cilindrata           │          '649 cc'           │
+│          Tipo motore          │          'termico'          │
+│             Tempi             │             '4'             │
+│           Cilindri            │             '2'             │
+│    Configurazione cilindri    │         'in linea'          │
+│     Disposizione cilindri     │        'trasversale'        │
+│     Inclinazione cilindri     │           'n.d.'            │
+│   Inclinazione cilindri a V   │           'n.d.'            │
+│        Raffreddamento         │         'a liquido'         │
+│          Avviamento           │         'elettrico'         │
+│         Alimentazione         │         'iniezione'         │
+│           Alesaggio           │           '83 mm'           │
+│             Corsa             │           '60 mm'           │
+│           Frizione            │        'multidisco'         │
+│        Numero valvole         │             '4'             │
+│         Distribuzione         │         'bialbero'          │
+│         Ride by Wire          │           'n.d.'            │
+│      Controllo trazione       │           'n.d.'            │
+│         Mappe motore          │           'n.d.'            │
+│            Potenza            │ '68 cv - 50 kw - 8.000 rpm' │
+│            Coppia             │ '7 kgm - 64 nm - 6.700 rpm' │
+│           Emissioni           │          'Euro 5'           │
+│         Depotenziata          │            'Sì'             │
+│       Tipologia cambio        │         'meccanico'         │
+│         Numero marce          │             '6'             │
+│     Presenza retromarcia      │            'No'             │
+│      Consumo medio VMTC       │         '23,4 km/l'         │
+│ Capacità serbatoio carburante │           '16 lt'           │
+│  Capacità riserva carburante  │           'n.d.'            │
+│      Trasmissione finale      │          'catena'           │
+└───────────────────────────────┴─────────────────────────────┘ 
+
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                                        Ciclistica                                       │
+├───────────────────────────┬─────────────────────────────────────────────────────────────┤
+│          Telaio           │           'Traliccio, acciaio ad alta resistenza'           │
+│   Sospensione anteriore   │                'Forcella telescopica 41 mm'                 │
+│   Escursione anteriore    │                          '125 mm'                           │
+│  Sospensione posteriore   │ 'Back-link orizzontale con regolazione del precarico molla' │
+│   Escursione posteriore   │                          '130 mm'                           │
+│   Tipo freno anteriore    │                       'doppio disco'                        │
+│  Misura freno anteriore   │                          '300 mm'                           │
+│   Tipo freno posteriore   │                           'disco'                           │
+│  Misura freno posteriore  │                          '220 mm'                           │
+│            ABS            │                            'Sì'                             │
+│        Tipo ruote         │                         'integrali'                         │
+│ Misura cerchio anteriore  │                        '17 pollici'                         │
+│   Pneumatico anteriore    │                    '120/70ZR17M/C (58W)'                    │
+│ Misura cerchio posteriore │                        '17 pollici'                         │
+│   Pneumatico posteriore   │                    '160/60ZR17M/C (69W)'                    │
+└───────────────────────────┴─────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────┐
+│           Batteria           │
+├─────────────────────┬────────┤
+│      Batteria       │ 'n.d.' │
+│      Capacità       │ 'n.d.' │
+│ Autonomia e durata  │ 'n.d.' │
+│ Batteria secondaria │ 'n.d.' │
+└─────────────────────┴────────┘
+
