@@ -7,31 +7,38 @@ import * as fs from 'fs';
 const Node = new JSDOM('').window.Node;
 //const { window } = new jsdom.JSDOM(``, { runScripts: "outside-only" });
 
-const url = 'https://www.moto.it/listino/kawasaki/z-650/z-650-2021-22/jHoVaT';
+const url = 'https://www.moto.it/listino/husqvarna/sm-125/sm-125-2010-12/Fp0QVP';
 
 request(url, (error, response, body) => {
    const response_window = (new JSDOM(body, "text/html")).window;
-   let datasheet = response_window.document.querySelector('section.datasheet');
 
-   let table = {};
+   let HTMLDataSheetSection = response_window.document.querySelector('section.datasheet');
+   let ObjDataSheet = {};
+   Objectify(HTMLDataSheetSection, ObjDataSheet)
+   let Table = AsciiTableFrom(ObjDataSheet);
+   Write(Table, './output.txt');
 
-   let nodes = datasheet.childNodes;
+   // console.log(Table);
+   // console.log(ObjDataSheet);
+});
+
+function Objectify(HTMLNode, ObjVessel) {
+   let nodes = HTMLNode.childNodes;
    nodes.forEach(node => {
       if (node.nodeType !== Node.ELEMENT_NODE || node.nodeName == 'SCRIPT') return;
 
-      let header = node.textContent.split('\n')[2];
+      let header = node.textContent.split('\n')[2]; // ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
       if (header === undefined) return;
-      header = header.trimStart();
-      [...header].forEach((char, index, headerCopy) => {
-         if (char == ' ') {
-            headerCopy[index + 1] = header[index + 1].toUpperCase();
-         }
-         if (index == header.length - 1) header = headerCopy.join('');
-      });
-
       
-      table[header] = {};
+      header = header.trimStart();
+      let tmpArr = header.split(' ');
+      for (let i = 0; i < tmpArr.length; i++) {
+         tmpArr[i] = tmpArr[i].charAt(0).toUpperCase() + tmpArr[i].slice(1);
+      }
+      header = tmpArr.join(' ');
+      
 
+      ObjVessel[header] = {};
       node.childNodes.forEach(child => {
          if (child.nodeType !== Node.ELEMENT_NODE || child.nodeName == 'H2') return;
 
@@ -41,36 +48,34 @@ request(url, (error, response, body) => {
             content[i] = content[i].trimStart();
             
             // Filter Measurament Units 
-            if (content[i] == 'mm'
+            if (  content[i] == 'mm'
                || content[i] == 'pollici'
                || content[i] == 'Kg'
                || content[i] == 'cc'
                || content[i] == 'cc'
                || content[i] == 'km/l'
                || content[i] == 'lt') {
-               table[header][content[lastKeyIdx]] += ' ' + content[i];
+                  ObjVessel[header][content[lastKeyIdx]] += ' ' + content[i];
                content[i] = ''
             }
 
             if (content[i] == '') continue;
 
-            // Assign Correct Key - Value Relations
+            // Assign Correct Key-Value Relations
             if (isKey) {
-               table[header][content[i]] = '.';
+               ObjVessel[header][content[i]] = '.';
                lastKeyIdx = i;
                isKey = false;
             } else {
-               table[header][content[lastKeyIdx]] = content[i];
+               ObjVessel[header][content[lastKeyIdx]] = content[i];
                isKey = true;
             }
          }
       });
    });
-   // console.log(table);
-   Asciify(table);
-});
+}
 
-function Asciify(table) {
+function AsciiTableFrom(ComplexObject) {
    const corner = {
       topLeft: '┌', topRight: '┐',
       bottomRight: '┘', bottomLeft: '└'
@@ -85,11 +90,12 @@ function Asciify(table) {
    }
 
    let output = '';
-   Object.keys(table).forEach(category => {
+   Object.keys(ComplexObject).forEach(category => {
+
       let maxKeyWidth = 0, maxValueWidth = 0;
-      Object.keys(table[category]).forEach(key => {
+      Object.keys(ComplexObject[category]).forEach(key => {
          if (key.length > maxKeyWidth) maxKeyWidth = key.length;
-         if (table[category][key].length > maxValueWidth) maxValueWidth = table[category][key].length;
+         if (ComplexObject[category][key].length > maxValueWidth) maxValueWidth = ComplexObject[category][key].length;
       });
       const maxTableWidth = maxKeyWidth + maxValueWidth + 9;
 
@@ -116,7 +122,7 @@ function Asciify(table) {
       // Finalizing Table
       const ts = new Transform({ transform(chunk, enc, cb) { cb(null, chunk) } });
       const logger = new Console({ stdout: ts });
-      logger.table(table[category]);
+      logger.table(ComplexObject[category]);
       const tableLines = (ts.read() || '').toString().split(/[\r\n]+/);
       let consoleTable = '';
       for (let i = 0; i < tableLines.length; i++) {
@@ -126,12 +132,14 @@ function Asciify(table) {
 
       output += title + consoleTable;
    });
-   
-   // Writing in File
+
+   return output;
+}
+
+function Write(String, Destination) {
    try {
-      fs.writeFileSync('./output.txt', output);
+      fs.writeFileSync(Destination, String);
    } catch (err) {
       console.error(err);
    }
-   console.log(output)
 }
