@@ -23,56 +23,61 @@ request(url, (error, response, body) => {
 });
 
 function Objectify(HTMLNode, ObjVessel) {
-   let nodes = HTMLNode.childNodes;
-   nodes.forEach(node => {
+   (HTMLNode.childNodes).forEach(node => {
       if (node.nodeType !== Node.ELEMENT_NODE || node.nodeName == 'SCRIPT') return;
 
-      let header = node.textContent.split('\n')[2]; // ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+      let header = node.textContent.split('\n')[2];
       if (header === undefined) return;
-      
-      header = header.trimStart();
-      let tmpArr = header.split(' ');
-      for (let i = 0; i < tmpArr.length; i++) {
-         tmpArr[i] = tmpArr[i].charAt(0).toUpperCase() + tmpArr[i].slice(1);
-      }
-      header = tmpArr.join(' ');
-      
+      header = TitleCase(header);
 
       ObjVessel[header] = {};
-      node.childNodes.forEach(child => {
+      (node.childNodes).forEach(child => {
          if (child.nodeType !== Node.ELEMENT_NODE || child.nodeName == 'H2') return;
 
          let content = child.textContent.split('\n');
-         let isKey = true, lastKeyIdx = 0;
-         for (let i = 0; i < content.length; i++) {
-            content[i] = content[i].trimStart();
-            
-            // Filter Measurament Units 
-            if (  content[i] == 'mm'
-               || content[i] == 'pollici'
-               || content[i] == 'Kg'
-               || content[i] == 'cc'
-               || content[i] == 'cc'
-               || content[i] == 'km/l'
-               || content[i] == 'lt') {
-                  ObjVessel[header][content[lastKeyIdx]] += ' ' + content[i];
-               content[i] = ''
-            }
-
-            if (content[i] == '') continue;
-
-            // Assign Correct Key-Value Relations
-            if (isKey) {
-               ObjVessel[header][content[i]] = '.';
-               lastKeyIdx = i;
-               isKey = false;
-            } else {
-               ObjVessel[header][content[lastKeyIdx]] = content[i];
-               isKey = true;
-            }
-         }
+         Fill(ObjVessel[header], content);
       });
    });
+}
+
+function TitleCase(string) {
+   string = string.trimStart();
+   let tmpArr = string.split(' ');
+   for (let i = 0; i < tmpArr.length; i++) {
+      tmpArr[i] = tmpArr[i].charAt(0).toUpperCase() + tmpArr[i].slice(1);
+   }
+   return tmpArr.join(' ');
+}
+
+function Fill(EmptyObject, StringArr) {
+   let isKey = true, lastKeyIdx = 0;
+   for (let i = 0; i < StringArr.length; i++) {
+      StringArr[i] = StringArr[i].trimStart();
+      
+      // Filter Measurament Units 
+      if (  StringArr[i] == 'mm'
+         || StringArr[i] == 'pollici'
+         || StringArr[i] == 'Kg'
+         || StringArr[i] == 'cc'
+         || StringArr[i] == 'cc'
+         || StringArr[i] == 'km/l'
+         || StringArr[i] == 'lt') {
+         EmptyObject[StringArr[lastKeyIdx]] += ' ' + StringArr[i];
+         StringArr[i] = ''
+      }
+
+      if (StringArr[i] == '') continue;
+
+      // Assign Correct Key-Value Relations
+      if (isKey) {
+         EmptyObject[StringArr[i]] = '.';
+         lastKeyIdx = i;
+         isKey = false;
+      } else {
+         EmptyObject[StringArr[lastKeyIdx]] = StringArr[i];
+         isKey = true;
+      }
+   }
 }
 
 function AsciiTableFrom(ComplexObject) {
