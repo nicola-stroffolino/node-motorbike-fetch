@@ -7,7 +7,7 @@ import * as fs from 'fs';
 const Node = new JSDOM('').window.Node;
 //const { window } = new jsdom.JSDOM(``, { runScripts: "outside-only" });
 
-const url = 'https://www.moto.it/listino/husqvarna/sm-125/sm-125-2010-12/Fp0QVP';
+const url = 'https://www.moto.it/listino/kawasaki/ninja-400/ninja-400-2023/cl07Kc';
 
 request(url, (error, response, body) => {
    const response_window = (new JSDOM(body, "text/html")).window;
@@ -15,7 +15,8 @@ request(url, (error, response, body) => {
    let HTMLDataSheetSection = response_window.document.querySelector('section.datasheet');
    let ObjDataSheet = {};
    Objectify(HTMLDataSheetSection, ObjDataSheet)
-   let Table = AsciiTableFrom(ObjDataSheet);
+   // let Table = AsciiTableFrom(ObjDataSheet);
+   let Table = HTMLTableFrom(ObjDataSheet);
    Write(Table, './output.txt');
 
    // console.log(Table);
@@ -138,6 +139,22 @@ function AsciiTableFrom(ComplexObject) {
       output += title + consoleTable;
    });
 
+   return output;
+}
+
+function HTMLTableFrom(ComplexObject) {
+   let output = '';
+   for (const category in ComplexObject) {
+      // console.log(category);
+      output += '<table class="bike-datasheet">\n'
+      output += `<tr><th class="datasheet-category" colspan="2">${category}</th></tr>\n`
+      for (const key in ComplexObject[category]) {
+         // console.log(`\t${key} ::: ${ComplexObject[category][key]}`);
+         const value = ComplexObject[category][key];
+         output += `<tr><td class="key">${key}</td><td class="value">${value}</td></tr>\n`
+      }
+      output += '</table>\n'
+   }
    return output;
 }
 

@@ -1,92 +1,82 @@
-┌───────────────────────────────────────────────────────┐
-│                 Informazioni Generali                 │
-├───────────────────┬───────────────────────────────────┤
-│       Marca       │            'Husqvarna'            │
-│      Modello      │             'SM 125'              │
-│   Allestimento    │       'SM 125 (2010 - 12)'        │
-│     Categoria     │           'Supermotard'           │
-│ Inizio produzione │              '2009'               │
-│  Fine produzione  │              '2012'               │
-│     Prezzo da     │ '4.640 € - franco concessionario' │
-│     Garanzia      │              'n.d.'               │
-│     Optional      │              'n.d.'               │
-└───────────────────┴───────────────────────────────────┘
-
-┌─────────────────────────────────────────┐
-│                  Misure                 │
-├────────────────────────────┬────────────┤
-│         Lunghezza          │ '2.210 mm' │
-│         Larghezza          │  '825 mm'  │
-│          Altezza           │   'n.d.'   │
-│  Altezza minima da terra   │   'n.d.'   │
-│ Altezza sella da terra MIN │  '870 mm'  │
-│ Altezza sella da terra MAX │   'n.d.'   │
-│         Interasse          │   'n.d.'   │
-│        Peso a secco        │ '113,5 Kg' │
-│  Peso in ordine di marcia  │   'n.d.'   │
-└────────────────────────────┴────────────┘
-
-┌─────────────────────────────────────────────┐
-│                    Motore                   │
-├───────────────────────────────┬─────────────┤
-│          Cilindrata           │ '124,82 cc' │
-│          Tipo motore          │   'n.d.'    │
-│             Tempi             │     '2'     │
-│           Cilindri            │     '1'     │
-│    Configurazione cilindri    │     '-'     │
-│     Disposizione cilindri     │     '-'     │
-│     Inclinazione cilindri     │     '-'     │
-│   Inclinazione cilindri a V   │     '-'     │
-│        Raffreddamento         │ 'a liquido' │
-│          Avviamento           │ 'a pedale'  │
-│         Alimentazione         │   'n.d.'    │
-│           Alesaggio           │   'n.d.'    │
-│             Corsa             │   'n.d.'    │
-│           Frizione            │   'n.d.'    │
-│        Numero valvole         │   'n.d.'    │
-│         Distribuzione         │   'n.d.'    │
-│         Ride by Wire          │   'n.d.'    │
-│      Controllo trazione       │   'n.d.'    │
-│         Mappe motore          │   'n.d.'    │
-│            Potenza            │   'n.d.'    │
-│            Coppia             │   'n.d.'    │
-│           Emissioni           │  'Euro 3'   │
-│         Depotenziata          │    'No'     │
-│       Tipologia cambio        │ 'meccanico' │
-│         Numero marce          │     '6'     │
-│     Presenza retromarcia      │    'No'     │
-│      Consumo medio VMTC       │   'n.d.'    │
-│ Capacità serbatoio carburante │  '9,5 lt'   │
-│  Capacità riserva carburante  │   'n.d.'    │
-│      Trasmissione finale      │   'n.d.'    │
-└───────────────────────────────┴─────────────┘
-
-┌──────────────────────────────────────────┐
-│                Ciclistica                │
-├───────────────────────────┬──────────────┤
-│          Telaio           │    'n.d.'    │
-│   Sospensione anteriore   │    'n.d.'    │
-│   Escursione anteriore    │    'n.d.'    │
-│  Sospensione posteriore   │    'n.d.'    │
-│   Escursione posteriore   │    'n.d.'    │
-│   Tipo freno anteriore    │   'disco'    │
-│  Misura freno anteriore   │   '260 mm'   │
-│   Tipo freno posteriore   │   'disco'    │
-│  Misura freno posteriore  │   '220 mm'   │
-│            ABS            │     'No'     │
-│        Tipo ruote         │    'n.d.'    │
-│ Misura cerchio anteriore  │ '17 pollici' │
-│   Pneumatico anteriore    │    'n.d.'    │
-│ Misura cerchio posteriore │ '17 pollici' │
-│   Pneumatico posteriore   │    'n.d.'    │
-└───────────────────────────┴──────────────┘
-
-┌──────────────────────────────┐
-│           Batteria           │
-├─────────────────────┬────────┤
-│      Batteria       │ 'n.d.' │
-│      Capacità       │ 'n.d.' │
-│ Autonomia e durata  │ 'n.d.' │
-│ Batteria secondaria │ 'n.d.' │
-└─────────────────────┴────────┘
-
+<table class="bike-datasheet">
+<tr><th class="datasheet-category" colspan="2">Informazioni Generali</th></tr>
+<tr><td class="key">Marca</td><td class="value">Kawasaki</td></tr>
+<tr><td class="key">Modello</td><td class="value">Ninja 400</td></tr>
+<tr><td class="key">Allestimento</td><td class="value">Ninja 400 (2023)</td></tr>
+<tr><td class="key">Categoria</td><td class="value">Sportive</td></tr>
+<tr><td class="key">Inizio produzione</td><td class="value">2022</td></tr>
+<tr><td class="key">Fine produzione</td><td class="value">n.d.</td></tr>
+<tr><td class="key">Prezzo da</td><td class="value">7.040 € - franco concessionario</td></tr>
+<tr><td class="key">Garanzia</td><td class="value">n.d.</td></tr>
+<tr><td class="key">Optional</td><td class="value">n.d.</td></tr>
+</table>
+<table class="bike-datasheet">
+<tr><th class="datasheet-category" colspan="2">Misure</th></tr>
+<tr><td class="key">Lunghezza</td><td class="value">1.990 mm</td></tr>
+<tr><td class="key">Larghezza</td><td class="value">710 mm</td></tr>
+<tr><td class="key">Altezza</td><td class="value">1.120 mm</td></tr>
+<tr><td class="key">Altezza minima da terra</td><td class="value">140 mm</td></tr>
+<tr><td class="key">Altezza sella da terra MIN</td><td class="value">785 mm</td></tr>
+<tr><td class="key">Altezza sella da terra MAX</td><td class="value">n.d.</td></tr>
+<tr><td class="key">Interasse</td><td class="value">1.370 mm</td></tr>
+<tr><td class="key">Peso a secco</td><td class="value">164 Kg</td></tr>
+<tr><td class="key">Peso in ordine di marcia</td><td class="value">168 Kg</td></tr>
+</table>
+<table class="bike-datasheet">
+<tr><th class="datasheet-category" colspan="2">Motore</th></tr>
+<tr><td class="key">Cilindrata</td><td class="value">399 cc</td></tr>
+<tr><td class="key">Tipo motore</td><td class="value">termico</td></tr>
+<tr><td class="key">Tempi</td><td class="value">4</td></tr>
+<tr><td class="key">Cilindri</td><td class="value">2</td></tr>
+<tr><td class="key">Configurazione cilindri</td><td class="value">in linea</td></tr>
+<tr><td class="key">Disposizione cilindri</td><td class="value">trasversale</td></tr>
+<tr><td class="key">Inclinazione cilindri</td><td class="value">n.d.</td></tr>
+<tr><td class="key">Inclinazione cilindri a V</td><td class="value">n.d.</td></tr>
+<tr><td class="key">Raffreddamento</td><td class="value">a liquido</td></tr>
+<tr><td class="key">Avviamento</td><td class="value">elettrico</td></tr>
+<tr><td class="key">Alimentazione</td><td class="value">iniezione</td></tr>
+<tr><td class="key">Alesaggio</td><td class="value">70 mm</td></tr>
+<tr><td class="key">Corsa</td><td class="value">51,8 mm</td></tr>
+<tr><td class="key">Frizione</td><td class="value">multidisco</td></tr>
+<tr><td class="key">Numero valvole</td><td class="value">4</td></tr>
+<tr><td class="key">Distribuzione</td><td class="value">bialbero</td></tr>
+<tr><td class="key">Ride by Wire</td><td class="value">n.d.</td></tr>
+<tr><td class="key">Controllo trazione</td><td class="value">n.d.</td></tr>
+<tr><td class="key">Mappe motore</td><td class="value">n.d.</td></tr>
+<tr><td class="key">Potenza</td><td class="value">45 cv - 33 kw - 10.500 rpm</td></tr>
+<tr><td class="key">Coppia</td><td class="value">4 kgm - 37 nm - 8.000 rpm</td></tr>
+<tr><td class="key">Emissioni</td><td class="value">Euro 5</td></tr>
+<tr><td class="key">Depotenziata</td><td class="value">Sì</td></tr>
+<tr><td class="key">Tipologia cambio</td><td class="value">meccanico</td></tr>
+<tr><td class="key">Numero marce</td><td class="value">6</td></tr>
+<tr><td class="key">Presenza retromarcia</td><td class="value">No</td></tr>
+<tr><td class="key">Consumo medio VMTC</td><td class="value">n.d.</td></tr>
+<tr><td class="key">Capacità serbatoio carburante</td><td class="value">14 lt</td></tr>
+<tr><td class="key">Capacità riserva carburante</td><td class="value">n.d.</td></tr>
+<tr><td class="key">Trasmissione finale</td><td class="value">catena</td></tr>
+</table>
+<table class="bike-datasheet">
+<tr><th class="datasheet-category" colspan="2">Ciclistica</th></tr>
+<tr><td class="key">Telaio</td><td class="value">Struttura a traliccio con tubi di acciaio ad alta resistenza,</td></tr>
+<tr><td class="key">Sospensione anteriore</td><td class="value">Forcella telescopica 41 mm</td></tr>
+<tr><td class="key">Escursione anteriore</td><td class="value">120 mm</td></tr>
+<tr><td class="key">Sospensione posteriore</td><td class="value">Uni-Trak con ammortizzatore a gas e precarico regolabile</td></tr>
+<tr><td class="key">Escursione posteriore</td><td class="value">130 mm</td></tr>
+<tr><td class="key">Tipo freno anteriore</td><td class="value">doppio disco</td></tr>
+<tr><td class="key">Misura freno anteriore</td><td class="value">310 mm</td></tr>
+<tr><td class="key">Tipo freno posteriore</td><td class="value">disco</td></tr>
+<tr><td class="key">Misura freno posteriore</td><td class="value">220 mm</td></tr>
+<tr><td class="key">ABS</td><td class="value">Sì</td></tr>
+<tr><td class="key">Tipo ruote</td><td class="value">integrali</td></tr>
+<tr><td class="key">Misura cerchio anteriore</td><td class="value">17 pollici</td></tr>
+<tr><td class="key">Pneumatico anteriore</td><td class="value">110/70R17 M/C 54H</td></tr>
+<tr><td class="key">Misura cerchio posteriore</td><td class="value">17 pollici</td></tr>
+<tr><td class="key">Pneumatico posteriore</td><td class="value">150/60R17 M/C 66H</td></tr>
+</table>
+<table class="bike-datasheet">
+<tr><th class="datasheet-category" colspan="2">Batteria</th></tr>
+<tr><td class="key">Batteria</td><td class="value">n.d.</td></tr>
+<tr><td class="key">Capacità</td><td class="value">n.d.</td></tr>
+<tr><td class="key">Autonomia e durata</td><td class="value">n.d.</td></tr>
+<tr><td class="key">Batteria secondaria</td><td class="value">n.d.</td></tr>
+</table>
